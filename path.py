@@ -1,0 +1,1 @@
+GOAL_FILE = 'data/goal_state.txt'
