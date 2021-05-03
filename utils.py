@@ -3,7 +3,7 @@ import numpy as np
 from copy import deepcopy
 
 
-# read mat from txt
+# read input puzzle from input txt file
 def read_matrix(file):
   with open(file) as f:
     lines = f.read().splitlines()
@@ -14,7 +14,7 @@ def read_matrix(file):
   return mat
 
 
-# write matrix to txt
+# store backtrace: record each matrix in the moving process to the output txt file
 def write_nodes(file, node):
   with open(file, 'w') as f:
     if node is None:
@@ -32,6 +32,7 @@ def write_node(f, node):
   f.write("\n")
 
 
+# expand frontier nodes
 def expand(queue, expand_node, goal_state, explored):
   up_state = move(expand_node.state, explored, "up")
   if up_state is not None:
@@ -67,7 +68,7 @@ def expand(queue, expand_node, goal_state, explored):
   
   return None
 
-
+# move the blank tile '0' according to specified 'direction' value
 def move(state, explored, direction):
   rows, cols = np.where(state == 0)
   row = int(rows)
