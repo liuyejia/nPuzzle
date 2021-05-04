@@ -1,7 +1,7 @@
 import heapq
 import argparse
 
-from node import UniformNode, MisplacedNode, MattHattenNode, goal_state
+from node import UniformNode, MisplacedNode, ManhattanNode, goal_state
 from utils import expand, read_matrix, write_nodes
 
 
@@ -22,8 +22,8 @@ def genereal_search(puzzle, args):
     # init node of A* with misplaces tile using its heuristic
     start_node = MisplacedNode(0, puzzle, None, None)
   elif args.method == 3:
-    # init node of A* with Manhatten distance using its heuristic
-    start_node = MattHattenNode(0, puzzle, None, None)
+    # init node of A* with Manhattan distance using its heuristic
+    start_node = ManhattanNode(0, puzzle, None, None)
   else:
     raise ValueError("Not Implemented Method!")
   
@@ -55,7 +55,7 @@ if __name__ == "__main__":
   elif args.method == 2:
     str = 'A* search with misplaced tile heuristic'
   else:
-    str = 'A* search with Manhatten distance heuristic'
+    str = 'A* search with Manhattan distance heuristic'
   print("Your selected search algorithm is: ", str, "\nYour input puzzle is located in file: ", args.puzzle_input)
   print("Puzzle Input: ")
   input_file = open(args.puzzle_input)

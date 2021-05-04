@@ -13,7 +13,7 @@ This project aims at solving the 8 puzzle problem.
    > python main.py --method 1 --puzzle_input data/doable.txt --out_file data/out.txt
    
    
-   - --method: input search algorithm number. '1' : uniform cost search; **2** represents the A* search with misplaced tile heuristic; **3** represents A* search with Manhatten distance heuristic. 
+   - --method: input search algorithm number. '1' : uniform cost search; **2** represents the A* search with misplaced tile heuristic; **3** represents A* search with Manhattan distance heuristic. 
    
    - --puzzle_input: file location of puzzle input
    

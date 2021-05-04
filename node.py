@@ -49,10 +49,10 @@ class MisplacedNode(Node):
     return MisplacedNode(depth, state, prev, move)
 
 
-# A* search with Manhatten distance heuristic
-class MattHattenNode(Node):
+# A* search with Manhattan distance heuristic
+class ManhattanNode(Node):
   def __init__(self, depth, state, prev, move):
-    super(MattHattenNode, self).__init__(depth, state, prev, move)
+    super(ManhattanNode, self).__init__(depth, state, prev, move)
     self.h = 0
     # h(n) = sum of ideal moves from current pos to goal pos for each tile
     for i, line in enumerate(goal_state):
@@ -68,4 +68,4 @@ class MattHattenNode(Node):
     return self.depth + self.h < other.depth + other.h
   
   def init_node(self, depth, state, prev, move):
-    return MattHattenNode(depth, state, prev, move)
+    return ManhattanNode(depth, state, prev, move)
