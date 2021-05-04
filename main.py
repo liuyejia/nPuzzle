@@ -29,6 +29,7 @@ def genereal_search(puzzle, args):
   
   if (start_node.state == goal_state).all():  # no need to expand if input is the goal state
     print("Number of expanded nodes: ", 0)
+    print("Max queue size: ", 0)
     return start_node
   
   queue = []
