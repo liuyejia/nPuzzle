@@ -43,6 +43,7 @@ def genereal_search(puzzle, args):
     if end_node is not None:
       print("Number of expanded nodes: ", len(explored_states))
       print("Max queue size: ", max_queue)
+      # print("Depth:", end_node.depth)
       return end_node
   return None
 
